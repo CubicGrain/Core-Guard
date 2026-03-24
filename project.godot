@@ -15,6 +15,19 @@ run/main_scene="uid://d12m8x0mq8laa"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
+[layer_names]
+
+2d_physics/layer_1="Tower"
+2d_navigation/layer_1="Enemies"
+2d_physics/layer_2="Slot"
+2d_physics/layer_3="Enemy"
+2d_physics/layer_4="Projectile"
+2d_physics/layer_5="Water"
+2d_physics/layer_6="Path"
+2d_physics/layer_7="Ground"
+2d_physics/layer_8="Hill 1"
+2d_physics/layer_9="Hill 2"
+
 [rendering]
 
 renderer/rendering_method="mobile"

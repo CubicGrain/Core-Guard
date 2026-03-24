@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://digfqnfk18v7q"]
+
+[ext_resource type="Texture2D" uid="uid://obwxrnet8115" path="res://Assets/Textures/towerDefense_tilesheet.png" id="1_3ih25"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bxkaj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47qgu"]
+atlas = ExtResource("1_3ih25")
+region = Rect2(980.6097, 658.07117, 21.724792, 28.96643)
+
+[node name="Enemy" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_bxkaj")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture = SubResource("AtlasTexture_47qgu")
