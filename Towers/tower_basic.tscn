@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://cdqksuecyijnl"]
+
+[ext_resource type="PackedScene" uid="uid://elxc1pttvohw" path="res://Towers/tower.tscn" id="1_cfp4r"]
+[ext_resource type="Script" uid="uid://emfli4mdylas" path="res://Towers/tower_basic.gd" id="2_bv7lf"]
+[ext_resource type="Texture2D" uid="uid://obwxrnet8115" path="res://Assets/Textures/towerDefense_tilesheet.png" id="2_r34ye"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bv7lf"]
+atlas = ExtResource("2_r34ye")
+region = Rect2(1216, 448, 64, 64)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12sh7"]
+atlas = ExtResource("2_r34ye")
+region = Rect2(1216, 640, 64, 64)
+filter_clip = true
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r34ye"]
+radius = 150.0
+
+[node name="TowerBasic" instance=ExtResource("1_cfp4r")]
+script = ExtResource("2_bv7lf")
+
+[node name="Base" parent="." index="0"]
+texture = SubResource("AtlasTexture_bv7lf")
+
+[node name="Turret" parent="." index="1"]
+texture = SubResource("AtlasTexture_12sh7")
+offset = Vector2(0, -12)
+
+[node name="CollisionShape2D" parent="EnemyDetectionArea" index="0"]
+shape = SubResource("CircleShape2D_r34ye")
+
+[connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]

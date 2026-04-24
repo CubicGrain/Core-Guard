@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnf5xa1e2elp5"]
+
+[ext_resource type="Texture2D" uid="uid://obwxrnet8115" path="res://Assets/Textures/towerDefense_tilesheet.png" id="1_5ox6o"]
+[ext_resource type="Script" uid="uid://cukcbdku15q2c" path="res://Projectiles/Bullets/bullet.gd" id="1_11pan"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11pan"]
+atlas = ExtResource("1_5ox6o")
+region = Rect2(1216, 768, 64, 64)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mxp71"]
+
+[node name="Bullet" type="Area2D"]
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("1_11pan")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 3.1415927
+texture = SubResource("AtlasTexture_11pan")
+offset = Vector2(0, -6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mxp71")

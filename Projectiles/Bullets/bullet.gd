@@ -1,0 +1,18 @@
+extends Area2D
+
+var direction: Vector2
+var speed : float = 200
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	position += direction * speed * delta
+
+func setup(pos: Vector2, angle: float, bullet_enum: Data.Bullet):
+	position = pos
+	direction = Vector2.UP.rotated(angle)
+	rotation = angle

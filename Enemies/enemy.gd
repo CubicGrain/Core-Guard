@@ -1,5 +1,5 @@
 class_name Enemy
-extends Node2D
+extends Area2D
 
 var path_follow: PathFollow2D
 
@@ -19,3 +19,6 @@ func _process(delta: float) -> void:
 
 func setup(new_path_follow: PathFollow2D):
 	path_follow = new_path_follow
+
+func _on_area_entered(bullet: Area2D) -> void:
+	bullet.queue_free()
