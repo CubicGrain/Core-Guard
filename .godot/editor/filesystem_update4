@@ -1,12 +1,2 @@
-res://Assets/Tileset.tres
-res://Towers/tower.tscn
-res://Towers/tower.gd
-res://Towers/tower_basic.tscn
-res://Towers/tower_basic.gd
 res://Levels/Level.tscn
-res://Enemies/enemy.tscn
-res://Enemies/enemy.gd
-res://Projectiles/Bullets/bullet.tscn
-res://data.gd
-res://Projectiles/Bullets/bullet.gd
-res://Levels/level.gd
+res://Assets/Tileset.tres
