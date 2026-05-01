@@ -2,8 +2,11 @@ class_name Tower
 extends Node2D
 
 var enemies: Array
+
+@export var damage : float
+
 @warning_ignore("unused_signal")
-signal shoot(position: Vector2, direction: float, bullet_enum: Data.Bullet)
+signal shoot(position: Vector2, direction: float, bullet_enum: Data.Bullet, damage : float)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

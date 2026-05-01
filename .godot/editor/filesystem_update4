@@ -1,2 +1,11 @@
-res://Levels/Level.tscn
 res://Assets/Tileset.tres
+res://UI/player_camera.tscn
+res://UI/player_camera.gd
+res://Levels/Level.tscn
+res://data.gd
+res://Projectiles/Bullets/bullet.gd
+res://Enemies/enemy.gd
+res://Levels/level.gd
+res://Towers/tower.gd
+res://Towers/tower_basic.gd
+res://Towers/tower_basic.tscn

@@ -19,6 +19,7 @@ radius = 150.0
 
 [node name="TowerBasic" instance=ExtResource("1_cfp4r")]
 script = ExtResource("2_bv7lf")
+damage = 5.0
 
 [node name="Base" parent="." index="0"]
 texture = SubResource("AtlasTexture_bv7lf")
