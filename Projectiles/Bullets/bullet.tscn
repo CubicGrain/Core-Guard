@@ -21,3 +21,8 @@ offset = Vector2(0, -6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_mxp71")
+
+[node name="Lifetime" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

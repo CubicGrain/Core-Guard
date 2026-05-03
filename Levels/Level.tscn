@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://df5we76vnexa1"]
+[gd_scene load_steps=10 format=4 uid="uid://df5we76vnexa1"]
 
 [ext_resource type="TileSet" uid="uid://bhebt3f30pebc" path="res://Assets/Tileset.tres" id="1_acdnu"]
 [ext_resource type="Script" uid="uid://ewxq1bksl2f6" path="res://Levels/level.gd" id="1_q1cbv"]
 [ext_resource type="PackedScene" uid="uid://cdqksuecyijnl" path="res://Towers/tower_basic.tscn" id="3_24c1m"]
 [ext_resource type="Texture2D" uid="uid://dung0jxj4quej" path="res://Assets/Textures/All free tiles.png" id="3_wbw1h"]
 [ext_resource type="PackedScene" uid="uid://dgvpfdlfqqsv8" path="res://UI/player_camera.tscn" id="5_286st"]
+[ext_resource type="PackedScene" uid="uid://ca3k7w0v7w0fx" path="res://Towers/tower_sniper.tscn" id="5_q1ycg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_286st"]
 texture = ExtResource("3_wbw1h")
@@ -1354,9 +1355,13 @@ curve = SubResource("Curve2D_24c1m")
 [node name="TowerBasic" parent="Towers" instance=ExtResource("3_24c1m")]
 position = Vector2(160, 287)
 
+[node name="TowerSniper" parent="Towers" instance=ExtResource("5_q1ycg")]
+position = Vector2(288, 96)
+
 [node name="Bullets" type="Node2D" parent="."]
 
 [node name="PlayerCamera" parent="." instance=ExtResource("5_286st")]
+position = Vector2(576, 323)
 
 [node name="WaveTimer" type="Timer" parent="."]
 wait_time = 10.0

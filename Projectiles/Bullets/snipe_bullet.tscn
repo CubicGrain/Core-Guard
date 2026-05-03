@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://uapijlah5e2e"]
+
+[ext_resource type="Script" uid="uid://cvclihcspkgdl" path="res://Projectiles/Bullets/snipe_bullet.gd" id="1_jhyw4"]
+[ext_resource type="Texture2D" uid="uid://obwxrnet8115" path="res://Assets/Textures/towerDefense_tilesheet.png" id="2_gvoif"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11pan"]
+atlas = ExtResource("2_gvoif")
+region = Rect2(1344, 768, 64, 64)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mxp71"]
+
+[node name="Bullet" type="Area2D"]
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("1_jhyw4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 3.1415927
+texture = SubResource("AtlasTexture_11pan")
+offset = Vector2(0, -10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mxp71")
+
+[node name="Lifetime" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

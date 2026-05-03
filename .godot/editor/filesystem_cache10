@@ -1,34 +1,44 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1777623943
-data.gd::GDScript::1849412176856415497::1777623822::0::1::::Data<>Node<><>0<>0<><>::
-icon.svg::CompressedTexture2D::1867811562105796530::1777623822::1777623944::1::::<><><>0<>0<>2e6f26990b29d3c9917a0037aa58c2cd<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-README.md::TextFile::-1::1777623822::0::1::::<><><>0<>0<><>::
-::res://Assets/::1777623822
-Tileset.tres::TileSet::2886096226936546940::1777623822::0::1::::<><><>0<>0<><>::uid://obwxrnet8115::::res://Assets/Textures/towerDefense_tilesheet.png
-::res://Assets/Textures/::1777623822
-All free tiles.png::CompressedTexture2D::8590285290135926673::1777623822::1777623944::1::::<><><>0<>0<>21950f80500731624bd1cc3eadc4e7a9<>res://.godot/imported/All free tiles.png-6dc1b3d20f2c3ce52627111f6a229ae7.ctex::
-New Basic Tiles Free.png::CompressedTexture2D::4019667922813675548::1777623822::1777623944::1::::<><><>0<>0<>b107f4a42f0f961c9caf4dff822370cd<>res://.godot/imported/New Basic Tiles Free.png-f8b3339c55a2762c709b0d99bdf47ad7.ctex::
-ReadMe.txt::TextFile::-1::1777623822::0::1::::<><><>0<>0<><>::
-towerDefense_tilesheet.png::CompressedTexture2D::986085948975057906::1777623822::1777623945::1::::<><><>0<>0<>2e897c89e4387220eeafa1515938e09b<>res://.godot/imported/towerDefense_tilesheet.png-fb7c101ea2c0690bba40f3161e9cc6b6.ctex::
-Trees and bushes.png::CompressedTexture2D::2361738146433903768::1777623822::1777623944::1::::<><><>0<>0<>dc7669f87fdde71d1b7ae29dd3aa2956<>res://.godot/imported/Trees and bushes.png-b431b0f69b3d79ef18d1e5f1d648bcfe.ctex::
-::res://Enemies/::1777623822
-enemy.gd::GDScript::3019473706760899109::1777623822::0::1::::Enemy<>Area2D<><>0<>0<><>::
-enemy.tscn::PackedScene::7733491915392226892::1777623822::0::1::::<><><>0<>0<><>::uid://obwxrnet8115::::res://Assets/Textures/towerDefense_tilesheet.png<>uid://bjawj5fuexn62::::res://Enemies/enemy.gd
-::res://Levels/::1777623822
-level.gd::GDScript::327598116308331821::1777623822::0::1::::Level<>Node2D<><>0<>0<><>::
-Level.tscn::PackedScene::7573482248515581766::1777623822::0::1::::<><><>0<>0<><>::uid://bhebt3f30pebc::::res://Assets/Tileset.tres<>uid://ewxq1bksl2f6::::res://Levels/level.gd<>uid://cdqksuecyijnl::::res://Towers/tower_basic.tscn<>uid://dung0jxj4quej::::res://Assets/Textures/All free tiles.png
-::res://Main/::1777623822
-main.gd::GDScript::8704149032315433818::1777623822::0::1::::Main<>Node2D<><>0<>0<><>::
-main.tscn::PackedScene::9040698967364898164::1777623822::0::1::::<><><>0<>0<><>::uid://dwamcexbv0x5k::::res://Main/main.gd<>uid://wnetvjubumes::::res://Main/main_menu.tscn
-main_menu.tscn::PackedScene::1571269386699186106::1777623822::0::1::::<><><>0<>0<><>::uid://d3klvio4w27d::::res://Main/title_screen.gd
-title_screen.gd::GDScript::268997037712924399::1777623822::0::1::::TitleScreen<>Control<><>0<>0<><>::
-world.tscn::PackedScene::7107769375355563061::1777623822::0::1::::<><><>0<>0<><>::uid://df5we76vnexa1::::res://Levels/Level.tscn
-::res://Projectiles/::1777623822
-::res://Projectiles/Bullets/::1777623822
-bullet.gd::GDScript::6197385411429631720::1777623822::0::1::::<>Area2D<><>0<>0<><>::
-bullet.tscn::PackedScene::3311060163183535512::1777623822::0::1::::<><><>0<>0<><>::uid://obwxrnet8115::::res://Assets/Textures/towerDefense_tilesheet.png<>uid://cukcbdku15q2c::::res://Projectiles/Bullets/bullet.gd
-::res://Towers/::1777623822
-tower.gd::GDScript::5787600570770672546::1777623822::0::1::::Tower<>Node2D<><>0<>0<><>::
-tower.tscn::PackedScene::304864981936900788::1777623822::0::1::::<><><>0<>0<><>::uid://cops622sbxsl3::::res://Towers/tower.gd
-tower_basic.gd::GDScript::305851601833952366::1777623822::0::1::::<>Tower<><>0<>0<><>::
-tower_basic.tscn::PackedScene::5017078313352697193::1777623822::0::1::::<><><>0<>0<><>::uid://elxc1pttvohw::::res://Towers/tower.tscn<>uid://emfli4mdylas::::res://Towers/tower_basic.gd<>uid://obwxrnet8115::::res://Assets/Textures/towerDefense_tilesheet.png
+::res://::1777827226
+data.gd::GDScript::1849412176856415497::1777827226::0::1::::Data<>Node<><>0<>0<><>::
+icon.svg::CompressedTexture2D::1867811562105796530::1777560079::1777803662::1::::<><><>0<>0<>2e6f26990b29d3c9917a0037aa58c2cd<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+README.md::TextFile::-1::1777560079::0::1::::<><><>0<>0<><>::
+tower_sniper.gd::GDScript::3618583627165320835::1777827226::0::1::::<>Tower<><>0<>0<><>::
+::res://Assets/::1777823932
+Tileset.tres::TileSet::2886096226936546940::1777823932::0::1::::<><><>0<>0<><>::uid://obwxrnet8115::::res://Assets/Textures/towerDefense_tilesheet.png
+::res://Assets/Textures/::1777803580
+All free tiles.png::CompressedTexture2D::8590285290135926673::1777560079::1777560079::1::::<><><>0<>0<>21950f80500731624bd1cc3eadc4e7a9<>res://.godot/imported/All free tiles.png-6dc1b3d20f2c3ce52627111f6a229ae7.ctex::
+New Basic Tiles Free.png::CompressedTexture2D::4019667922813675548::1777560079::1777560079::1::::<><><>0<>0<>b107f4a42f0f961c9caf4dff822370cd<>res://.godot/imported/New Basic Tiles Free.png-f8b3339c55a2762c709b0d99bdf47ad7.ctex::
+ReadMe.txt::TextFile::-1::1777560079::0::1::::<><><>0<>0<><>::
+towerDefense_tilesheet.png::CompressedTexture2D::986085948975057906::1777560079::1777560079::1::::<><><>0<>0<>2e897c89e4387220eeafa1515938e09b<>res://.godot/imported/towerDefense_tilesheet.png-fb7c101ea2c0690bba40f3161e9cc6b6.ctex::
+Trees and bushes.png::CompressedTexture2D::2361738146433903768::1777560079::1777560079::1::::<><><>0<>0<>dc7669f87fdde71d1b7ae29dd3aa2956<>res://.godot/imported/Trees and bushes.png-b431b0f69b3d79ef18d1e5f1d648bcfe.ctex::
+::res://Enemies/::1777827226
+enemy.gd::GDScript::3019473706760899109::1777827226::0::1::::Enemy<>Area2D<><>0<>0<><>::
+enemy.tscn::PackedScene::7733491915392226892::1777560079::0::1::::<><><>0<>0<><>::uid://obwxrnet8115::::res://Assets/Textures/towerDefense_tilesheet.png<>uid://bjawj5fuexn62::::res://Enemies/enemy.gd
+::res://Levels/::1777827226
+level.gd::GDScript::327598116308331821::1777827226::0::1::::Level<>Node2D<><>0<>0<><>::
+Level.tscn::PackedScene::7573482248515581766::1777824505::0::1::::<><><>0<>0<><>::uid://bhebt3f30pebc::::res://Assets/Tileset.tres<>uid://ewxq1bksl2f6::::res://Levels/level.gd<>uid://cdqksuecyijnl::::res://Towers/tower_basic.tscn<>uid://dung0jxj4quej::::res://Assets/Textures/All free tiles.png<>uid://dgvpfdlfqqsv8::::res://UI/player_camera.tscn<>uid://ca3k7w0v7w0fx::::res://Towers/tower_sniper.tscn
+::res://Main/::1777827226
+main.gd::GDScript::8704149032315433818::1777560079::0::1::::Main<>Node2D<><>0<>0<><>::
+main.tscn::PackedScene::9040698967364898164::1777560079::0::1::::<><><>0<>0<><>::uid://dwamcexbv0x5k::::res://Main/main.gd<>uid://wnetvjubumes::::res://Main/main_menu.tscn
+main_menu.tscn::PackedScene::1571269386699186106::1777809233::0::1::::<><><>0<>0<><>::uid://d3klvio4w27d::::res://Main/title_screen.gd
+title_screen.gd::GDScript::268997037712924399::1777827226::0::1::::TitleScreen<>Control<><>0<>0<><>::
+world.tscn::PackedScene::7107769375355563061::1777560079::0::1::::<><><>0<>0<><>::uid://df5we76vnexa1::::res://Levels/Level.tscn
+::res://Projectiles/::1777560079
+::res://Projectiles/Bullets/::1777827378
+bullet.gd::GDScript::6197385411429631720::1777827226::0::1::::<>Area2D<><>0<>0<><>::
+bullet.tscn::PackedScene::3311060163183535512::1777827176::0::1::::<><><>0<>0<><>::uid://obwxrnet8115::::res://Assets/Textures/towerDefense_tilesheet.png<>uid://cukcbdku15q2c::::res://Projectiles/Bullets/bullet.gd
+snipe_bullet.gd::GDScript::6251618384156014601::1777827378::0::1::::<>Area2D<><>0<>0<><>::
+snipe_bullet.tscn::PackedScene::1404702403716922698::1777827364::0::1::::<><><>0<>0<><>::uid://ci2y8mbvr6nqy::::res://Projectiles/Bullets/snipe_bullet.tres.gd<>uid://obwxrnet8115::::res://Assets/Textures/towerDefense_tilesheet.png
+::res://Towers/::1777827226
+tower_sniper.tscn::PackedScene::4831309454964111157::1777827435::0::1::::<><><>0<>0<><>::uid://elxc1pttvohw::::res://Towers/tower.tscn<>uid://brs4sqp6nnx7p::::res://tower_sniper.gd<>uid://obwxrnet8115::::res://Assets/Textures/towerDefense_tilesheet.png
+tower.gd::GDScript::5787600570770672546::1777827226::0::1::::Tower<>Node2D<><>0<>0<><>::
+tower.tscn::PackedScene::304864981936900788::1777822560::0::1::::<><><>0<>0<><>::uid://cops622sbxsl3::::res://Towers/tower.gd
+tower_basic.gd::GDScript::305851601833952366::1777827226::0::1::::<>Tower<><>0<>0<><>::
+tower_basic.tscn::PackedScene::5017078313352697193::1777822916::0::1::::<><><>0<>0<><>::uid://elxc1pttvohw::::res://Towers/tower.tscn<>uid://emfli4mdylas::::res://Towers/tower_basic.gd<>uid://obwxrnet8115::::res://Assets/Textures/towerDefense_tilesheet.png
+::res://UI/::1777827226
+player_camera.gd::GDScript::6120989353465890393::1777827226::0::1::::<>Camera2D<><>0<>0<><>::
+player_camera.tscn::PackedScene::7624666904415882131::1777819922::0::1::::<><><>0<>0<><>::uid://cthb2hhrayyvp::::res://UI/player_camera.gd<>uid://cbfog4lf1dgnx::::res://UI/wave_control.tscn<>uid://cb04bqi1g1ls1::::res://UI/tower_ui.tscn
+tower_ui.gd::GDScript::4005392569153823147::1777827226::0::1::::<>Control<><>0<>0<><>::
+tower_ui.tscn::PackedScene::4896403087382273178::1777823440::0::1::::<><><>0<>0<><>::uid://obwxrnet8115::::res://Assets/Textures/towerDefense_tilesheet.png<>uid://bxcih3mm6hg8j::::res://UI/tower_ui.gd
+wave_control.tscn::PackedScene::4854214392888743169::1777810824::0::1::::<><><>0<>0<><>::

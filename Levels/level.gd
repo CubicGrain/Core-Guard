@@ -3,18 +3,24 @@ extends Node2D
 
 var enemy_scene = preload("res://Enemies/enemy.tscn")
 var bullet_scene = preload("res://Projectiles/Bullets/bullet.tscn")
+var snipe_bullet_scene = preload("res://Projectiles/Bullets/snipe_bullet.tscn")
 var current_enemy_spawn : Data.Enemy
 
 var waves_active : bool = false
 var current_level_waves : Dictionary
 var current_wave : int
 var current_enemy_num : int
+@export var wave_time : float = 10
 
 var wave_handler_on_coolown : bool = false
 
 @onready var wave_timer = $WaveTimer
 @onready var enemy_timer = $EnemyTimer
 @onready var path_node = $Path2D
+@onready var next_wave_button = $"PlayerCamera/Wave Control/NextWave"
+@onready var wave_time_display = $"PlayerCamera/Wave Control/WaveTime"
+@onready var tower_slot_tilemap = $BG/TowerSlots
+@onready var tower_ui = $PlayerCamera/tower_ui
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -26,18 +32,68 @@ func _ready() -> void:
 ##	path_follow.add_child(enemy)
 ##	$Path2D.add_child(path_follow)
 	start_waves(Data.ENEMY_WAVES.get('test level'))
-	$Towers/TowerBasic.connect('shoot', create_bullet)
-
+	for tower in $Towers.get_children():
+		tower.connect('shoot', create_bullet)
+	next_wave_button.connect('pressed', skip_wave_timer)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	wave_handler(current_level_waves)
-	
+	wave_time_display.text = str(snapped(wave_timer.time_left, 0.1))
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			var clicked_tile = tower_slot_tilemap.local_to_map(tower_slot_tilemap.get_local_mouse_position())
+			var tile_data = tower_slot_tilemap.get_cell_tile_data(clicked_tile)
+			if tile_data:
+				var slot_type = tile_data.get_custom_data("tower_slot")
+				if slot_type != null:
+					print(slot_type)
+					tower_ui.visible = true
+					$PlayerCamera/tower_ui/Sidebar/TowerSelect.visible = true
+					
+					if slot_type == "standard":
+						$PlayerCamera/tower_ui/Sidebar/TowerSelect/Standard.visible = true
+						$PlayerCamera/tower_ui/Sidebar/TowerSelect/Support.visible = false
+						$PlayerCamera/tower_ui/Sidebar/TowerSelect/HighGround.visible = false
+						$PlayerCamera/tower_ui/Sidebar/TowerSelect/Trap.visible = false
+					else: if slot_type == "support":
+						$PlayerCamera/tower_ui/Sidebar/TowerSelect/Support.visible = true
+						$PlayerCamera/tower_ui/Sidebar/TowerSelect/HighGround.visible = false
+						$PlayerCamera/tower_ui/Sidebar/TowerSelect/Trap.visible = false
+						$PlayerCamera/tower_ui/Sidebar/TowerSelect/Standard.visible = false
+					else: if slot_type == "high_ground":
+						$PlayerCamera/tower_ui/Sidebar/TowerSelect/HighGround.visible = true
+						$PlayerCamera/tower_ui/Sidebar/TowerSelect/Support.visible = false
+						$PlayerCamera/tower_ui/Sidebar/TowerSelect/Trap.visible = false
+						$PlayerCamera/tower_ui/Sidebar/TowerSelect/Standard.visible = false
+					else: if slot_type == "trap":
+						$PlayerCamera/tower_ui/Sidebar/TowerSelect/Trap.visible = true
+						$PlayerCamera/tower_ui/Sidebar/TowerSelect/Support.visible = false
+						$PlayerCamera/tower_ui/Sidebar/TowerSelect/HighGround.visible = false
+						$PlayerCamera/tower_ui/Sidebar/TowerSelect/Standard.visible = false
+					
+				
+	pass
 
 func create_bullet(pos: Vector2, angle: float, bullet_enum: Data.Bullet, damage: float):
-	var bullet = bullet_scene.instantiate()
-	bullet.setup(pos, angle, bullet_enum, damage)
-	$Bullets.add_child(bullet)
+	var bullet
+	if bullet_enum == Data.Bullet.SINGLE:
+		bullet = bullet_scene.instantiate()
+	else: if bullet_enum == Data.Bullet.SNIPE:
+		bullet = snipe_bullet_scene.instantiate()
+	
+	if bullet:
+		bullet.setup(pos, angle, bullet_enum, damage)
+		$Bullets.add_child(bullet)
+	else:
+		push_warning("bullet not instantiated")
+
+func skip_wave_timer():
+	if waves_active and not wave_timer.paused and wave_timer.time_left > 0:
+		wave_timer.start(0.1)
+		print("skipped wave")
 
 func start_waves(level_waves: Dictionary):
 	current_level_waves = level_waves
@@ -50,7 +106,7 @@ func wave_handler(level_waves: Dictionary):
 	if path_node and level_waves:
 		if waves_active and not wave_handler_on_coolown and not wave_timer.time_left > 0 and current_wave <= level_waves.size():
 			wave_handler_on_coolown = true
-			wave_timer.start()
+			wave_timer.start(wave_time)
 			## FIGURE OUT HOW TO PAUSE WAVES WHILE ENEMIES ARE ALIVE
 			print("test 2")
 		if waves_active and current_wave > level_waves.size():

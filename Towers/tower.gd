@@ -3,6 +3,8 @@ extends Node2D
 
 var enemies: Array
 
+@export var rotation_speed : float = 4
+@export var detection_range : float = 100
 @export var damage : float
 
 @warning_ignore("unused_signal")
@@ -10,7 +12,7 @@ signal shoot(position: Vector2, direction: float, bullet_enum: Data.Bullet, dama
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

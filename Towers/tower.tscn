@@ -1,22 +1,36 @@
-[gd_scene load_steps=2 format=3 uid="uid://elxc1pttvohw"]
+[gd_scene load_steps=3 format=3 uid="uid://elxc1pttvohw"]
 
 [ext_resource type="Script" uid="uid://cops622sbxsl3" path="res://Towers/tower.gd" id="1_ovc7u"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ovc7u"]
+radius = 400.01126
+
 [node name="Tower" type="Node2D"]
+rotation = -0.007191259
 script = ExtResource("1_ovc7u")
 
 [node name="Base" type="Sprite2D" parent="."]
 
 [node name="Turret" type="Sprite2D" parent="."]
 
+[node name="TurretRay" type="RayCast2D" parent="Turret"]
+target_position = Vector2(0, -100)
+collision_mask = 4
+collide_with_areas = true
+
 [node name="EnemyDetectionArea" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetectionArea"]
+shape = SubResource("CircleShape2D_ovc7u")
 
 [node name="ReloadTimer" type="Timer" parent="."]
 autostart = true
+
+[node name="Target" type="RayCast2D" parent="."]
+target_position = Vector2(0, -100)
+collision_mask = 0
 
 [connection signal="area_entered" from="EnemyDetectionArea" to="." method="_on_enemy_detection_area_area_entered"]
 [connection signal="area_exited" from="EnemyDetectionArea" to="." method="_on_enemy_detection_area_area_exited"]

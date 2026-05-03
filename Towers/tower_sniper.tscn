@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://ca3k7w0v7w0fx"]
+
+[ext_resource type="PackedScene" uid="uid://elxc1pttvohw" path="res://Towers/tower.tscn" id="1_vrihs"]
+[ext_resource type="Script" uid="uid://brs4sqp6nnx7p" path="res://Towers/tower_sniper.gd" id="2_m3dbx"]
+[ext_resource type="Texture2D" uid="uid://obwxrnet8115" path="res://Assets/Textures/towerDefense_tilesheet.png" id="3_m3dbx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrgff"]
+atlas = ExtResource("3_m3dbx")
+region = Rect2(1280, 448, 64, 64)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgkoe"]
+atlas = ExtResource("3_m3dbx")
+region = Rect2(960, 768, 64, 64)
+filter_clip = true
+
+[node name="TowerSniper" instance=ExtResource("1_vrihs")]
+rotation = 0.0
+script = ExtResource("2_m3dbx")
+rotation_speed = 1.0
+detection_range = 400.0
+damage = 10.0
+
+[node name="Base" parent="." index="0"]
+texture = SubResource("AtlasTexture_hrgff")
+
+[node name="Turret" parent="." index="1"]
+rotation = -1.5707964
+texture = SubResource("AtlasTexture_fgkoe")
+offset = Vector2(6, 0)
+
+[node name="TurretRay" parent="Turret" index="0"]
+target_position = Vector2(400, 0)
+
+[node name="ReloadTimer" parent="." index="3"]
+wait_time = 3.0
+
+[node name="Target" parent="." index="4"]
+rotation = -1.5707964
+target_position = Vector2(400, 0)
+
+[node name="ChargeTimer" type="Timer" parent="." index="5"]
+one_shot = true
+
+[connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
+[connection signal="timeout" from="ChargeTimer" to="." method="_on_charge_timer_timeout"]

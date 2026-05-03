@@ -2,7 +2,7 @@ class_name Data
 extends Node
 
 enum Tower {BASIC, BLAST, SPLASH}
-enum Bullet {SINGLE, FIRE, EXPLOSION}
+enum Bullet {SINGLE, FIRE, EXPLOSION, SNIPE}
 enum Enemy {BASIC, FAST, STRONG, AIR, BOSS}
 
 const TOWER_DATA = {}

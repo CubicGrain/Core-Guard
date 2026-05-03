@@ -1,6 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://dgvpfdlfqqsv8"]
+[gd_scene load_steps=4 format=3 uid="uid://dgvpfdlfqqsv8"]
 
 [ext_resource type="Script" uid="uid://cthb2hhrayyvp" path="res://UI/player_camera.gd" id="1_8gq6a"]
+[ext_resource type="PackedScene" uid="uid://cbfog4lf1dgnx" path="res://UI/wave_control.tscn" id="2_si6np"]
+[ext_resource type="PackedScene" uid="uid://cb04bqi1g1ls1" path="res://UI/tower_ui.tscn" id="3_egqbp"]
 
 [node name="PlayerCamera" type="Camera2D"]
 script = ExtResource("1_8gq6a")
+
+[node name="Wave Control" parent="." instance=ExtResource("2_si6np")]
+offset_left = -576.0
+offset_top = 324.0
+offset_right = -576.0
+offset_bottom = 324.0
+
+[node name="tower_ui" parent="." instance=ExtResource("3_egqbp")]
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0

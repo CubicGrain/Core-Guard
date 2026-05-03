@@ -18,8 +18,11 @@ filter_clip = true
 radius = 150.0
 
 [node name="TowerBasic" instance=ExtResource("1_cfp4r")]
+rotation = 0.0
 script = ExtResource("2_bv7lf")
-damage = 5.0
+rotation_speed = 2.0
+detection_range = 150.0
+damage = 2.5
 
 [node name="Base" parent="." index="0"]
 texture = SubResource("AtlasTexture_bv7lf")

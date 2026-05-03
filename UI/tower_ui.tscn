@@ -1,0 +1,437 @@
+[gd_scene load_steps=11 format=3 uid="uid://cb04bqi1g1ls1"]
+
+[ext_resource type="Texture2D" uid="uid://obwxrnet8115" path="res://Assets/Textures/towerDefense_tilesheet.png" id="1_i40ag"]
+[ext_resource type="Script" uid="uid://bxcih3mm6hg8j" path="res://UI/tower_ui.gd" id="1_ia4ij"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ia4ij"]
+atlas = ExtResource("1_i40ag")
+region = Rect2(1216, 448, 64, 64)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbgt4"]
+atlas = ExtResource("1_i40ag")
+region = Rect2(1216, 640, 64, 72)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3vob"]
+atlas = ExtResource("1_i40ag")
+region = Rect2(1216, 448, 64, 64)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mym6"]
+atlas = ExtResource("1_i40ag")
+region = Rect2(1216, 640, 64, 72)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jxhgy"]
+atlas = ExtResource("1_i40ag")
+region = Rect2(1280, 448, 64, 64)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dq3q"]
+atlas = ExtResource("1_i40ag")
+region = Rect2(960, 768, 64, 64)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pup2"]
+atlas = ExtResource("1_i40ag")
+region = Rect2(1216, 448, 64, 64)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kf1tv"]
+atlas = ExtResource("1_i40ag")
+region = Rect2(1216, 640, 64, 72)
+filter_clip = true
+
+[node name="tower_ui" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_ia4ij")
+
+[node name="Sidebar" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.762
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.17596436
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="TowerSelect" type="Panel" parent="Sidebar"]
+layout_mode = 2
+
+[node name="TowersTitle" type="RichTextLabel" parent="Sidebar/TowerSelect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.062000003
+offset_bottom = -0.1760025
+bbcode_enabled = true
+text = "[font_size=28][outline_size=10][outline_color=dim_gray][color=silver][b]Towers"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Standard" type="Panel" parent="Sidebar/TowerSelect"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.060000002
+anchor_right = 1.0
+anchor_bottom = 0.53900003
+offset_top = 0.11999893
+offset_bottom = -0.2720337
+
+[node name="basic" type="Panel" parent="Sidebar/TowerSelect/Standard"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.026
+anchor_top = 0.069000006
+anchor_right = 0.259
+anchor_bottom = 0.231
+offset_left = -0.12400007
+offset_top = -15.390001
+offset_right = 0.033996582
+offset_bottom = 35.39
+
+[node name="TowerBase" type="TextureRect" parent="Sidebar/TowerSelect/Standard/basic"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.61
+offset_bottom = -0.05000305
+grow_horizontal = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_ia4ij")
+
+[node name="TowerTurret" type="TextureRect" parent="Sidebar/TowerSelect/Standard/basic"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.105000004
+anchor_right = 1.0
+anchor_bottom = 0.505
+offset_top = 0.025000572
+offset_bottom = -0.024997711
+grow_horizontal = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_qbgt4")
+
+[node name="TowerName" type="RichTextLabel" parent="Sidebar/TowerSelect/Standard/basic"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.55200005
+anchor_right = 1.0
+anchor_bottom = 0.8
+offset_top = 0.039993286
+grow_horizontal = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[font_size=16][outline_size=5][outline_color=dim_gray][color=silver]Basic"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Price" type="RichTextLabel" parent="Sidebar/TowerSelect/Standard/basic"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.781
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.005004883
+grow_horizontal = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[font_size=12][outline_size=5][outline_color=olive][color=gold]100c"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Sidebar/TowerSelect/Standard/basic"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Support" type="Panel" parent="Sidebar/TowerSelect"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.060000002
+anchor_right = 1.0
+anchor_bottom = 0.53900003
+offset_top = 0.11999893
+offset_bottom = -0.2720337
+
+[node name="Basic" type="Panel" parent="Sidebar/TowerSelect/Support"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.026
+anchor_top = 0.069000006
+anchor_right = 0.259
+anchor_bottom = 0.231
+offset_left = -0.12400007
+offset_top = -15.390001
+offset_right = 0.033996582
+offset_bottom = 35.39
+
+[node name="TowerBase" type="TextureRect" parent="Sidebar/TowerSelect/Support/Basic"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.61
+offset_bottom = -0.05000305
+grow_horizontal = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_l3vob")
+
+[node name="TowerTurret" type="TextureRect" parent="Sidebar/TowerSelect/Support/Basic"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.105000004
+anchor_right = 1.0
+anchor_bottom = 0.505
+offset_top = 0.025000572
+offset_bottom = -0.024997711
+grow_horizontal = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_7mym6")
+
+[node name="TowerName" type="RichTextLabel" parent="Sidebar/TowerSelect/Support/Basic"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.55200005
+anchor_right = 1.0
+anchor_bottom = 0.8
+offset_top = 0.039993286
+grow_horizontal = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[font_size=16][outline_size=5][outline_color=dim_gray][color=silver]Basic"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Price" type="RichTextLabel" parent="Sidebar/TowerSelect/Support/Basic"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.781
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.005004883
+grow_horizontal = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[font_size=12][outline_size=5][outline_color=olive][color=gold]100c"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Sidebar/TowerSelect/Support/Basic"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="HighGround" type="Panel" parent="Sidebar/TowerSelect"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.060000002
+anchor_right = 1.0
+anchor_bottom = 0.53900003
+offset_top = 0.11999893
+offset_bottom = -0.2720337
+
+[node name="Sniper" type="Panel" parent="Sidebar/TowerSelect/HighGround"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.026
+anchor_top = 0.069000006
+anchor_right = 0.259
+anchor_bottom = 0.231
+offset_left = -0.12400007
+offset_top = -15.390001
+offset_right = 0.033996582
+offset_bottom = 35.39
+
+[node name="TowerBase" type="TextureRect" parent="Sidebar/TowerSelect/HighGround/Sniper"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.61
+offset_bottom = -0.05000305
+grow_horizontal = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_jxhgy")
+
+[node name="TowerTurret" type="TextureRect" parent="Sidebar/TowerSelect/HighGround/Sniper"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.105000004
+anchor_right = 1.0
+anchor_bottom = 0.505
+offset_top = 68.605
+offset_bottom = 70.994995
+grow_horizontal = 2
+rotation = -1.5707964
+mouse_filter = 2
+texture = SubResource("AtlasTexture_6dq3q")
+
+[node name="TowerName" type="RichTextLabel" parent="Sidebar/TowerSelect/HighGround/Sniper"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.55200005
+anchor_right = 1.0
+anchor_bottom = 0.8
+offset_top = 0.039993286
+grow_horizontal = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[font_size=16][outline_size=5][outline_color=dim_gray][color=silver]Sniper"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Price" type="RichTextLabel" parent="Sidebar/TowerSelect/HighGround/Sniper"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.781
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.005004883
+grow_horizontal = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[font_size=12][outline_size=5][outline_color=olive][color=gold]250c"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Sidebar/TowerSelect/HighGround/Sniper"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Trap" type="Panel" parent="Sidebar/TowerSelect"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.060000002
+anchor_right = 1.0
+anchor_bottom = 0.53900003
+offset_top = 0.11999893
+offset_bottom = -0.2720337
+
+[node name="Basic" type="Panel" parent="Sidebar/TowerSelect/Trap"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.026
+anchor_top = 0.069000006
+anchor_right = 0.259
+anchor_bottom = 0.231
+offset_left = -0.12400007
+offset_top = -15.390001
+offset_right = 0.033996582
+offset_bottom = 35.39
+
+[node name="TowerBase" type="TextureRect" parent="Sidebar/TowerSelect/Trap/Basic"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.61
+offset_bottom = -0.05000305
+grow_horizontal = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_6pup2")
+
+[node name="TowerTurret" type="TextureRect" parent="Sidebar/TowerSelect/Trap/Basic"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.105000004
+anchor_right = 1.0
+anchor_bottom = 0.505
+offset_top = 0.025000572
+offset_bottom = -0.024997711
+grow_horizontal = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_kf1tv")
+
+[node name="TowerName" type="RichTextLabel" parent="Sidebar/TowerSelect/Trap/Basic"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.55200005
+anchor_right = 1.0
+anchor_bottom = 0.8
+offset_top = 0.039993286
+grow_horizontal = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[font_size=16][outline_size=5][outline_color=dim_gray][color=silver]Basic"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Price" type="RichTextLabel" parent="Sidebar/TowerSelect/Trap/Basic"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.781
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.005004883
+grow_horizontal = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[font_size=12][outline_size=5][outline_color=olive][color=gold]100c"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Sidebar/TowerSelect/Trap/Basic"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Exit" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.72700006
+anchor_right = 0.762
+anchor_bottom = 0.062000003
+offset_left = -0.50408936
+offset_right = 0.17596436
+offset_bottom = -0.1760025
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Exit"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.9760001
+anchor_bottom = 1.0
+offset_right = -0.016002655
+mouse_filter = 2
+bbcode_enabled = true
+text = "[font_size=28][outline_size=10][outline_color=web_maroon][color=firebrick][b]X"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExitButton" type="Button" parent="Exit"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[connection signal="pressed" from="Exit/ExitButton" to="." method="_on_exit_button_pressed"]
